@@ -31,7 +31,7 @@ public class Exercicio4 {
             System.out.println("-> Média: " + media);
              
         } else {
-            System.out.println("Não recebeu Parametro/argumento recebido pela funcao main.");
+            System.out.println("Não recebeu Parametro/argumento recebido pela funcao main...");
         }
 
     }
