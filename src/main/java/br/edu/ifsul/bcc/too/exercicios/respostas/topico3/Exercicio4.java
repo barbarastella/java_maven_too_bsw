@@ -14,20 +14,25 @@ public class Exercicio4 {
         Comando para execução (a partir do diretorio java): java br/edu/ifsul/bcc/too/base/topico3/exercicios/Exercicio4
      */
 
-        private static float calcular(Float x, Float y) {
-            return (x + y) / 2f;
+        private static float calcular(Float x, Float y, Float z) {
+            return (x + y + z) / 3f;
         }
         
     public static void main(String[] args) {
               
-        if (args.length == 2) {
-            System.out.println("Insira o primeiro valor: " + args[0]);
-            Float x = Float.parseFloat(args[0]);
+        System.out.println("Quantidade de argumentos: " + args.length); // imprime a quantidade de argumentos passados
+        
+        if (args.length == 3) {
+            System.out.println("Primeiro parâmetro: " + args[0]);
+            Float x = Float.parseFloat(args[0]); // converte valor de string para float
             
-            System.out.println("Insira o segundo valor: " + args[1]);
-            Float y = Float.parseFloat(args[1]);
+            System.out.println("Segundo parâmetro: " + args[1]);
+            Float y = Float.parseFloat(args[1]); // converte valor de string para float
             
-            Float media = calcular(x, y);
+            System.out.println("Segundo parâmetro: " + args[2]);
+            Float z = Float.parseFloat(args[2]); // converte valor de string para float
+            
+            Float media = calcular(x, y, z);
             System.out.println("-> Média: " + media);
              
         } else {
