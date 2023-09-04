@@ -39,10 +39,18 @@ public class Exercicio5 {
         System.out.println(S);
         
         // ----------------------------------------------------------------------------
-        System.out.println("2. Exemplo de valueOf!");
+        System.out.println("2. Exemplo de valueOf!"); // converte um tipo primitivo para String
         
         double x = 1.87453739; 
         System.out.println("-> retorno pós-conversão: " + String.valueOf(x));
+        
+        //-----------------------------------------------------------------------------
+        System.out.println("3. Exemplo de startsWith!");
+        
+        String z = "Abacate";
+        System.out.println("-> retorno pós-conversão: " + String.valueOf(x));
+        
+        
     }
 
     public static void main(String args[]) { // método main
