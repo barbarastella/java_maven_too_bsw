@@ -1,6 +1,5 @@
 package br.edu.ifsul.bcc.too.anotacoes;
 
-import br.edu.ifsul.bcc.too.exercicios.respostas.topico3.*;
 import java.lang.String;
 
 /**
@@ -18,83 +17,64 @@ public class Aula0409 {
     private void testeComparacaoStrings(String texto, String texto2, String texto3, String texto4) {
 
         // == -> verificação de instância 
-        /**if (texto == texto2) {
-            System.out.println("Texto tem a mesma instância de texto2.");
-        } else {
-            System.out.println("Texto não tem a mesma instância de texto2.");
-        }
-
-        if (texto == texto3) {
-            System.out.println("Texto tem a mesma instância de texto3.");
-        } else {
-            System.out.println("Texto não tem a mesma instância de texto3.");
-        }
-
-        // equals -> verificação de conteúdo
-        if (texto.equals(texto2)) {
-            System.out.println("O conteúdo de texto e texto2 é igual.");
-        } else {
-            System.out.println("O conteúdo de texto e texto2 não é igual.");
-        }
-
-        if (texto.equals(texto3)) {
-            System.out.println("O conteúdo de texto e texto3 é igual.");
-        } else {
-            System.out.println("O conteúdo de texto e texto3 não é igual.");
-        }
-
-        // equalsIgnoreCase -> verificação de conteúdo ignorando distinção entre maiúsculas e minúsculas
-        if (texto.equalsIgnoreCase(texto2)) {
-            System.out.println("O conteúdo de texto e texto2 é igual.");
-        } else {
-            System.out.println("O conteúdo de texto e texto2 não é igual.");
-        }
-
-        if (texto.equalsIgnoreCase(texto3)) {
-            System.out.println("O conteúdo de texto e texto3 é igual.");
-        } else {
-            System.out.println("O conteúdo de texto e texto3 não é igual.");
-        }**/
+        /**
+         * if (texto == texto2) { System.out.println("Texto tem a mesma
+         * instância de texto2."); } else { System.out.println("Texto não tem a
+         * mesma instância de texto2."); }
+         *
+         * if (texto == texto3) { System.out.println("Texto tem a mesma
+         * instância de texto3."); } else { System.out.println("Texto não tem a
+         * mesma instância de texto3."); }
+         *
+         * // equals -> verificação de conteúdo if (texto.equals(texto2)) {
+         * System.out.println("O conteúdo de texto e texto2 é igual."); } else {
+         * System.out.println("O conteúdo de texto e texto2 não é igual."); }
+         *
+         * if (texto.equals(texto3)) { System.out.println("O conteúdo de texto e
+         * texto3 é igual."); } else { System.out.println("O conteúdo de texto e
+         * texto3 não é igual."); }
+         *
+         * // equalsIgnoreCase -> verificação de conteúdo ignorando distinção
+         * entre maiúsculas e minúsculas if (texto.equalsIgnoreCase(texto2)) {
+         * System.out.println("O conteúdo de texto e texto2 é igual."); } else {
+         * System.out.println("O conteúdo de texto e texto2 não é igual."); }
+         *
+         * if (texto.equalsIgnoreCase(texto3)) { System.out.println("O conteúdo
+         * de texto e texto3 é igual."); } else { System.out.println("O conteúdo
+         * de texto e texto3 não é igual.");
+        }*
+         */
     }
 
     private void testeSplit(String teste) // base no método java.lang.String.split
-    {/**
-        // imprima uma lista de informações inteiras na saída padrão, converta para inteiro se necessário
-        String[] vet = teste.split(",");
-
-        for (String X : vet) {
-            try {
-                Integer num = Integer.valueOf(X);
-                System.out.println(num);
-            } catch (NumberFormatException e) {
-                System.out.println("-");
-            }
-        } **/
+    {
+        /**
+         * // imprima uma lista de informações inteiras na saída padrão,
+         * converta para inteiro se necessário String[] vet = teste.split(",");
+         *
+         * for (String X : vet) { try { Integer num = Integer.valueOf(X);
+         * System.out.println(num); } catch (NumberFormatException e) {
+         * System.out.println("-"); } } *
+         */
     }
 
     private void teste2Split(String teste) // base no método java.lang.String.split
     {
-        // System.out.println(teste);
-        String[] vet = teste.split("=");
-        
-        for (int i = 0; i < vet.length; i++)
-            System.out.print(vet[i] + "---");
-        
-        String[] vet2 = null;
-        
-        for (String X : vet) {
-            try {
-                vet2 = X.split(" ");
-            } catch (NumberFormatException e) {
-                System.out.print("||");
+        String[] vet = teste.split(",");
+
+        if (vet.length == 0) {
+            System.out.println("O vetor possui zero partes!");
+        } else {
+            for (String x : vet) {
+                System.out.println("String: " + x);
+                System.out.println("Índice do espaço: " + x.indexOf(" "));
+                System.out.println("Índice do fecha chaves: " + x.indexOf("}"));
+                String y = x.substring(x.indexOf(" ") + 1, x.indexOf("}"));
+                
+                Integer z = Integer.parseInt(y); // ou Integer.valueOf
+                System.out.println("Valor: " + z + "\n");
             }
         }
-        
-        System.out.println("\n");
-        
-        for (int i = 0; i < vet2.length; i++)
-            System.out.print(vet2[i] + "---");
-        
     }
 
     public static void main(String[] args) {
