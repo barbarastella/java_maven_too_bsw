@@ -1,7 +1,6 @@
 
 package br.edu.ifsul.bcc.too.anotacoes;
 
-import br.edu.ifsul.bcc.too.topico3.util.Aluno;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Collection;
@@ -19,7 +18,7 @@ import java.util.TreeSet;
  * Documentacao: https://www.devmedia.com.br/java-collections-como-utilizar-collections/18450
  */
 
-public class Aula2509 {
+public class Aula2309 {
     
     /*
         A partir de Java 1.2, foi criado um conjunto de interfaces e classes denominado Collections Framework, 
@@ -58,7 +57,7 @@ public class Aula2509 {
     // Queue: LinkedList, PriorityQueue
     
     //atributo de instância.
-    private Collection<Integer> minhaLista;
+   // private Collection<Integer> minhaLista;
     
     //atributo de instância.
     private List<Integer> lst; // lista de inteiros; colocar <Object> fará a lista aceitar qualquer tipo de dado misturado
@@ -66,13 +65,13 @@ public class Aula2509 {
     private Map<String, String> mp; // mapa de inteiros
     
     //construtor        
-    protected Aula2509(){
+    protected Aula2309(){
         
         
     }
             
     //construtor 
-    public Aula2509(Integer tipo){
+    public Aula2309(Integer tipo){
         
         // é como um array cujo tamanho pode crescer. A busca de um elemento é rápida, mas inserções e exclusões não são.
         lst = new ArrayList();
@@ -98,7 +97,7 @@ public class Aula2509 {
     }
     
     //construtor 
-    public Aula2509(String tipo){ 
+    public Aula2309(String tipo){ 
         st = new TreeSet(); // se a necessidade for um conjunto com elementos não duplicados e acesso em ordem natural
         
         st.add("Nova Zelandia");
@@ -134,55 +133,55 @@ public class Aula2509 {
     
     public void metodoClassificacaoMap() {
         //Aplicação semelhante a HashMap, com a diferença que TreeMap perde no quesito desempenho;
-        SortedMap <String, Aluno> map = new TreeMap();
+        SortedMap <String, Aluno_util2309> map = new TreeMap();
         
-        map.put("0" , new Aluno("456a","junior"));
-        map.put("1" , new Aluno("789a","fulano"));
-        map.put("0" , new Aluno("789a","abel"));
-        map.put("50" , new Aluno("789a","abel"));
-        map.put("3" , new Aluno("123a","telmo"));
+        map.put("0" , new Aluno_util2309("456a","junior"));
+        map.put("1" , new Aluno_util2309("789a","fulano"));
+        map.put("0" , new Aluno_util2309("789a","abel"));
+        map.put("50" , new Aluno_util2309("789a","abel"));
+        map.put("3" , new Aluno_util2309("123a","telmo"));
         
-        for (Map.Entry <String, Aluno> m : map.entrySet())
+        for (Map.Entry <String, Aluno_util2309> m : map.entrySet())
             System.out.println("Chave: " + m.getKey() + " | Valor: " + m.getValue());         
     }
     
     public void metodoClassificacao(){
         
-        java.util.List<Aluno> list = new ArrayList();//criando a variavel list.
+        java.util.List<Aluno_util2309> list = new ArrayList();//criando a variavel list.
         
-        Aluno a = new Aluno("pf009","telmo");// criacao do objeto/variavael a do tipo Aluno.
+        Aluno_util2309 a = new Aluno_util2309("pf009","telmo");// criacao do objeto/variavael a do tipo Aluno_util2309.
         list.add(a);
         
-        Aluno b = new Aluno("pf002","junior");
+        Aluno_util2309 b = new Aluno_util2309("pf002","junior");
         list.add(b);
         
-        Aluno c = new Aluno("pf003","fulano");
+        Aluno_util2309 c = new Aluno_util2309("pf003","fulano");
         list.add(c);
         
-        Aluno d = new Aluno("pf000","Abel");
+        Aluno_util2309 d = new Aluno_util2309("pf000","Abel");
         list.add(d);
         
-        Aluno e = new Aluno("pf01", "Ciclano"); //criando a instancia a partir do construtor sem parâmetros
+        Aluno_util2309 e = new Aluno_util2309("pf01", "Ciclano"); //criando a instancia a partir do construtor sem parâmetros
         list.add(e);
         
         System.out.println("Antes: " + list); //antes
                
-        Collections.sort(list); // classificacao com base na método compareTo da classe Aluno (@Override)      
+        Collections.sort(list); // classificacao com base na método compareTo da classe Aluno_util2309 (@Override)      
         
         System.out.println("Depois: " + list); //depois
     }
     
     public static void main(String[] args) {
-       new Aula2509(0); //criacao da instância invoncando o construtor que recebe um integer
+       //new Aula2309(0); //criacao da instância invoncando o construtor que recebe um integer
         
        System.out.println();
        
-       new Aula2509("a");  //criacao da instância invocando o construtor que recebe uma String.        
+      // new Aula2309("a");  //criacao da instância invocando o construtor que recebe uma String.        
        
        System.out.println();
        
        //criacao da instância invocando o construtor sem parâmetros e chama o método metodoHashmap.
-       new Aula2509().metodoHashmap(); 
+       new Aula2309().metodoHashmap(); 
        
        //Colecoes c = new Colecoes();
        //c.metodoHashmap();
@@ -192,11 +191,11 @@ public class Aula2509 {
        
        System.out.println();
        
-       new Aula2509().metodoClassificacao();        
+       new Aula2309().metodoClassificacao();        
       
        System.out.println();
        
-       new Aula2509().metodoClassificacaoMap();
+       new Aula2309().metodoClassificacaoMap();
        
      
      

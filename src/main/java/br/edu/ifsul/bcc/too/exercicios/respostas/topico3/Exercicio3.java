@@ -46,6 +46,7 @@ public class Exercicio3 {
                 }
             }
         }
+                
 
         for (int linha = 0; linha < rgDados2.length; linha++) {
             for (int coluna = 0; coluna < rgDados2[linha].length; coluna++) {

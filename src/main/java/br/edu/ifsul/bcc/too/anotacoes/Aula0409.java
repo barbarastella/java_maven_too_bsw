@@ -11,7 +11,7 @@ public class Aula0409 {
     public Aula0409(String texto, String texto2, String texto3, String texto4) { // construtor
         testeComparacaoStrings(texto, texto2, texto3, texto4);
         testeSplit("1,2,3,4,5,6,7,a,b,c,8");
-        teste2Split("{codigo= 1},{codigo= 22},{codigo= 300}");
+        teste2Split("{codigo: 1},{codigo: 22},{codigo: 300}");
     }
 
     private void testeComparacaoStrings(String texto, String texto2, String texto3, String texto4) {
@@ -66,13 +66,13 @@ public class Aula0409 {
             System.out.println("O vetor possui zero partes!");
         } else {
             for (String x : vet) {
-                System.out.println("String: " + x);
-                System.out.println("Índice do espaço: " + x.indexOf(" "));
-                System.out.println("Índice do fecha chaves: " + x.indexOf("}"));
+                //System.out.println("String: " + x);
+                //System.out.println("Índice do espaço: " + x.indexOf(" "));
+                //System.out.println("Índice do fecha chaves: " + x.indexOf("}"));
                 String y = x.substring(x.indexOf(" ") + 1, x.indexOf("}"));
                 
-                Integer z = Integer.parseInt(y); // ou Integer.valueOf
-                System.out.println("Valor: " + z + "\n");
+                //Integer z = Integer.parseInt(y); // ou Integer.valueOf
+                System.out.println("Valor: " + y + "\n");
             }
         }
     }

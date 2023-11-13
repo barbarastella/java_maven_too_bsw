@@ -1,5 +1,6 @@
 package br.edu.ifsul.bcc.too.anotacoes;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat; // biblioteca para formatação de datas
 import java.util.Calendar; // biblioteca Calendar
 import java.util.Date; // biblioteca Date
@@ -85,7 +86,7 @@ public class Aula1109 {
         // Exercício 4: converter string "25/09/1983" para Date
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
         new Aula1109(); // criação da instância
     }
 }
