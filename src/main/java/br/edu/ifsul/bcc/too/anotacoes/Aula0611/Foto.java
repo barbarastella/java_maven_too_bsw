@@ -1,7 +1,6 @@
 package br.edu.ifsul.bcc.too.anotacoes.Aula0611;
 
 import java.util.Collection;
-import java.util.logging.Logger;
 
 /**
  *

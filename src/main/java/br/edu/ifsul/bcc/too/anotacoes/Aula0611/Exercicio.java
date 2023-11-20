@@ -15,6 +15,7 @@ public class Exercicio { // ESTUDANDO HERANÇA
 
     // relacionamentos do diagrama de classes: agregação, agregação por composição, associação e herança
     // EXERCÍCIO 1: criar um método que retorne uma coleção de Pessoa: a coleção deverá ter 5 pessoas (1 Funcionario, 2 Cliente, 2 Aluno)
+    
     private Collection<Pessoa> getPessoas() {
         Collection<Pessoa> listPessoa = new ArrayList();
 
@@ -100,6 +101,7 @@ public class Exercicio { // ESTUDANDO HERANÇA
     }
 
     // EXERCÍCIO 2: criar um método que receba uma collection de Pessoa; imprimir os elementos na saída padrão e indicar a instância (se é Funcionario, Aluno ou Cliente)
+    
     private void impressaoExercicio2(Collection<Pessoa> pessoas) {
         /*for (Pessoa P : pessoas) {
             if (P instanceof Funcionario) {
@@ -132,14 +134,17 @@ public class Exercicio { // ESTUDANDO HERANÇA
 
     // EXERCÍCIO 3: criar métodos que gere um cliente , um produto, uma foto e um pedido (obter dados via JOptionPane)
     // criar um método que imprima um pedido (todas as informações)
-    private void exercicio3() {
+    
+    private Pedido exercicio3() {
         SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
 
         Pessoa P = generatePessoa();
         Cliente C = generateCliente();
         Produto Pt = generateProduto();
-        Foto F = generateFoto();
-        Pedido PD = generatePedido();
+        Foto F = generateFoto(Pt);
+        Pedido PD = generatePedido(C,  Pt);
+        
+        return PD;
     }
 
     private Pessoa generatePessoa() {
@@ -149,7 +154,8 @@ public class Exercicio { // ESTUDANDO HERANÇA
         
         try { // setar atributo data da compra
             String dado = JOptionPane.showInputDialog(null, "Informe a data de nascimento:", "dd/MM/aaaa", JOptionPane.PLAIN_MESSAGE);
-
+            // P.setDtnsct(dado); envia data para ser convertida no set
+        
             Calendar dataC = Calendar.getInstance();
 
             try {
@@ -261,23 +267,40 @@ public class Exercicio { // ESTUDANDO HERANÇA
         return null;
     }
 
-    private Foto generateFoto() {
-        return null;
+    private Foto generateFoto(Produto produto) {
+        Foto f = new Foto();
+        
+        f.setProduto(produto);
+        
+        return f;
     }
 
-    private Pedido generatePedido() {
-        return null;
+    private Pedido generatePedido(Cliente cliente, Produto produto) {
+        Pedido p = new Pedido();
+        p.setC(cliente);
+        p.setProduto(produto);
+        
+        return p;
     }
 
-    private void impressaoExercicio3() {
-
+    private void impressaoExercicio3(Pedido pedido) {
+        System.out.println(pedido.getCodigo());
+        System.out.println(pedido.getC().getCPF());
+        
+        for (Produto P : pedido.getProdutos())
+        {
+            System.out.println("Produto: " + P.getID());
+                    
+            for (Foto F : P.getFotos())
+                System.out.println("Foto (código): " + F.getCodigo());
+        }
     }
 
     // --------------------------------------------------------------------
+    
     public Exercicio() {
         impressaoExercicio2(getPessoas());
-        exercicio3();
-        impressaoExercicio3();
+        impressaoExercicio3(exercicio3());
     }
 
     public static void main(String[] args) {

@@ -1,16 +1,16 @@
 package br.edu.ifsul.bcc.too.anotacoes.Aula0611;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 /**
  *
  * @author 20222PF.CC0003
  */
-
 public class Pessoa { // superclasse não referencia ninguém
-    
+
     // atribuos da instância: CPF, RG, nome, logradouro e número, data de nascimento, peso
-    
     private String CPF;
     private String RG;
     private String nome;
@@ -19,10 +19,10 @@ public class Pessoa { // superclasse não referencia ninguém
     private Calendar dtnsc;
     private Float peso;
     private Boolean status;
-    
+
     // construtor com e sem parâmetros
-    
-    public Pessoa() {}
+    public Pessoa() {
+    }
 
     public Pessoa(String CPF, String RG, String nome, String logradouro, Integer numero, Calendar dtnsc, Float peso, Boolean status) {
         this.CPF = CPF;
@@ -34,9 +34,8 @@ public class Pessoa { // superclasse não referencia ninguém
         this.peso = peso;
         this.status = status;
     }
-    
+
     // encapsulamento
-    
     public String getCPF() {
         return CPF;
     }
@@ -61,6 +60,15 @@ public class Pessoa { // superclasse não referencia ninguém
         return dtnsc;
     }
 
+   public String getDtnsct() { // retorna a data já formatada
+        if (this.dtnsc != null)
+        {
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            return sdf.format(this.dtnsc.getTime());
+        }
+        else return null;
+    }
+        
     public Float getPeso() {
         return peso;
     }
@@ -91,6 +99,20 @@ public class Pessoa { // superclasse não referencia ninguém
 
     public void setDtnsc(Calendar dtnsc) {
         this.dtnsc = dtnsc;
+    }
+    
+    public void setDtnsct(String datansc) throws ParseException { // converter string > date > calendar
+        if (datansc != null) {
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            
+            try {
+                Calendar c = Calendar.getInstance();
+                c.setTimeInMillis(sdf.parse(datansc).getTime());
+                this.dtnsc = c;
+            } catch (ParseException ex) {
+                this.dtnsc = null;
+            }
+        }
     }
 
     public void setPeso(Float peso) {
